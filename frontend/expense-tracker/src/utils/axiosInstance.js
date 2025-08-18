@@ -31,7 +31,7 @@ axiosInstance.interceptors.response.use(
     },
     (error)=>{
         //Handle common error globally
-        if(error.reponse){
+        if(error.response){
             if(error.response.status==401){
                 //Redirest to login page
                 window.location.href="/login";

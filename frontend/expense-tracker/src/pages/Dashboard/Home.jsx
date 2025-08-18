@@ -14,6 +14,7 @@ import ExpenseTransactions from '../../components/Dashboard/ExpenseTransactions'
 import Last30DaysExpenses from '../../components/Dashboard/last30DaysExpenses';
 import RecentIncomeWithChart from '../../components/Dashboard/RecentIncomeWithChart';
 import RecentIncome from '../../components/Dashboard/RecentIncome';
+import BudgetCard from '../../components/Dashboard/BudgetCard';
 
 const Home = () => {
   useUserAuth();
@@ -106,6 +107,12 @@ const Home = () => {
         data={dashboardData?.last60DaysIncome?.transactions.slice(0,4) || []}
         totalIncome={dashboardData?.totalIncome || 0}
         />
+
+      <div className='md:col-span-2'>
+        <BudgetCard
+          expenses={dashboardData?.last30DaysExpenses?.transactions || []}
+        />
+      </div>
       </div>
       </div>
     </DashboardLayout>

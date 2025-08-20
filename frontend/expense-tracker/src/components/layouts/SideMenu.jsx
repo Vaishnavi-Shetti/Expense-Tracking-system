@@ -26,7 +26,7 @@ const SideMenu = ({activeMenu}) => {
     <div className='flex flex-col items-center justify-center gap-3 mt-3 mb-7'>
         {user?.profileImageUrl ?(
                 <img
-                    src={user?.profileImageUrl.replace("http://localhost:8000", import.meta.env.VITE_API_URL) || ""}
+                    src={user?.profileImageUrl || ""}
                     alt="Profile Image"
                     className='w-20 h-20 bg-slate-400 rounded-full'
                 />):(

@@ -25,16 +25,17 @@ const EmojiPickerPopup = ({ icon, onSelect }) => {
       {/* Popup */}
       {isOpen && (
         <div className="relative">
-          {/* Cancel Button stays always visible */}
+          {/* Cancel Button stays on top */}
           <button
             className="w-7 h-7 flex items-center justify-center bg-white border border-gray-200 
-                       rounded-full absolute -top-3 -right-3 z-20 cursor-pointer shadow-md"
+                       rounded-full absolute top-2 right-2 z-50 cursor-pointer shadow-md"
             onClick={() => setIsOpen(false)}
           >
             <LuX />
           </button>
 
-          <div className="max-h-[400px] overflow-y-auto border rounded-lg shadow-lg">
+          {/* Scrollable emoji picker */}
+          <div className="w-[320px] max-h-[400px] overflow-y-auto border rounded-lg shadow-lg relative z-40 bg-white">
             <EmojiPicker
               open={isOpen}
               onEmojiClick={(emoji) => onSelect(emoji?.imageUrl || "")}

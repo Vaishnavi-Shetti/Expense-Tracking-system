@@ -35,7 +35,7 @@ const EmojiPickerPopup = ({ icon, onSelect }) => {
           </button>
 
           {/* Scrollable emoji picker */}
-          <div className="w-[320px] max-h-[80vh] overflow-y-auto border rounded-lg shadow-lg relative z-40 bg-white">
+          <div className="w-[320px] max-h-[300px] overflow-y-auto border rounded-lg shadow-lg relative z-40 bg-white">
             <EmojiPicker
               open={isOpen}
               onEmojiClick={(emoji) => onSelect(emoji?.imageUrl || "")}
